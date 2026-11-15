@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <menuitem id="contract_retention_report_menu"
+              name="Retention and Advances"
+              action="contract_retention_report_action"
+              parent="account.account_reports_partners_reports_menu"
+              groups="account.group_account_readonly"
+              sequence="40"/>
+
     <menuitem id="account_retention_release_menu"
               name="Release Retention"
               action="account_retention_release_action"

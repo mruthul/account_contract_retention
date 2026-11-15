@@ -14,7 +14,7 @@ Retention and advance recovery for contracting companies
 """,
     'depends': ['sale', 'account_reports'],
     'data': [
-        'security/ir.model.access.csv',
+        'data/retention_report.xml',
         'views/res_config_settings_views.xml',
         'views/account_move_views.xml',
         'views/account_payment_views.xml',
