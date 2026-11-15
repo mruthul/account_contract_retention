@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="account_retention_release_menu"
+              name="Release Retention"
+              action="account_retention_release_action"
+              parent="account.menu_finance_receivables"
+              groups="account.group_account_user"
+              sequence="40"/>
+</odoo>

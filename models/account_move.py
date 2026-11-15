@@ -192,6 +192,23 @@ class AccountMove(models.Model):
             ))
         return super().button_draft()
 
+    def action_release_retention(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': self.env._("Release Retention"),
+            'res_model': 'account.retention.release',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_company_id': self.company_id.id,
+                'default_partner_id': self.commercial_partner_id.id,
+                'default_currency_id': self.currency_id.id,
+                'default_order_id': self.contract_order_id.id,
+                'retention_move_ids': self.ids,
+            },
+        }
+
     # BUSINESS METHODS
     def _post(self, soft=True):
         contract_moves = self.filtered(lambda move: move.is_sale_document() and (
