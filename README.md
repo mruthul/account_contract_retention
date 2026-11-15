@@ -4,6 +4,9 @@ Odoo 19 Enterprise module for contracting companies that invoice progress
 monthly, hold a retention on each invoice and recover an advance payment over
 the life of the project.
 
+© 2026 Mruthul Raj. Submitted for evaluation only. Any use in production needs
+the author's written permission.
+
 ## Configuration
 
 *Accounting > Configuration > Settings > Contract Retention*
