@@ -14,6 +14,7 @@ Retention and advance recovery for contracting companies
 """,
     'depends': ['sale', 'account_reports'],
     'data': [
+        'security/ir.model.access.csv',
         'data/retention_report.xml',
         'views/res_config_settings_views.xml',
         'views/account_move_views.xml',
@@ -21,6 +22,7 @@ Retention and advance recovery for contracting companies
         'views/sale_order_views.xml',
         'wizard/account_retention_release_views.xml',
         'views/menus.xml',
+        'report/report_invoice.xml',
     ],
     'license': 'OPL-1',
     'author': "Mruthul Raj",

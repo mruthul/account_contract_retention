@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//t[@t-call='account.document_tax_totals']" position="after">
+            <t t-set="contract_deductions" t-value="o._get_contract_deduction_lines()"/>
+            <t t-if="contract_deductions">
+                <tr t-foreach="contract_deductions" t-as="deduction">
+                    <td t-out="deduction['label']">Less: Retention (10%)</td>
+                    <td class="text-end">
+                        <span t-out="deduction['amount']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}">-10,000.00</span>
+                    </td>
+                </tr>
+                <tr class="border-black o_total fw-bold">
+                    <td>Amount to Pay Now</td>
+                    <td class="text-end">
+                        <span t-field="o.amount_payable_now">85,000.00</span>
+                    </td>
+                </tr>
+            </t>
+        </xpath>
+    </template>
+</odoo>
