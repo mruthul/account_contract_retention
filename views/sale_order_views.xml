@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_view_form" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.contract.retention</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <page name="other_information" position="before">
+                <page string="Retention &amp; Advance" name="contract_retention">
+                    <group>
+                        <group string="Retention">
+                            <field name="retention_percent"/>
+                            <field name="retention_due_date"/>
+                        </group>
+                        <group string="Advance">
+                            <field name="advance_recovery_percent"/>
+                        </group>
+                    </group>
+                    <field name="contract_advance_ids" readonly="1" nolabel="1">
+                        <list>
+                            <field name="name"/>
+                            <field name="date"/>
+                            <field name="amount" sum="Total"/>
+                            <field name="advance_residual" sum="Total"/>
+                            <field name="currency_id" column_invisible="True"/>
+                            <field name="state" widget="badge"/>
+                        </list>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>
